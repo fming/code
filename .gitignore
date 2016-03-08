@@ -48,6 +48,6 @@ Debug/TestAlgorithm.tlog/unsuccessfulbuild
 *.tlog
 Debug/TestAlgorithm.Build.CppClean.log
 *.log
-Debug/vc120.idb
+Debug/*
 *.filters
 TestAlgorithm.v12.suo

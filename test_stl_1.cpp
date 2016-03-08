@@ -16,7 +16,7 @@ void TestFindIf()
 
 	it = std::find_if(v.begin(), v.end(), std::bind2nd(std::greater<int>(), 1000));
 	cout << *it << endl;
-	
+
 }
 
 void TestFindAdjacent()
@@ -53,7 +53,7 @@ void TestMismatch()
 	int elements2[] = { 1, 2, 3, 200 };
 	std::vector<int> v(elements, elements + 6);
 	std::vector<int> v2(elements2, elements2 + 4);
-	
+
 	std::pair<IntIterator, IntIterator> p = std::mismatch(v.begin(), v.end(), v2.begin());
 	cout << *p.first << endl;
 	cout << *p.second << endl;
@@ -74,7 +74,28 @@ void TestEqual()
 	bool equal = std::equal(v.begin(), v.end(), v2.begin());
 	cout << equal << endl;
 
-	
+
+}
+
+void TestSearch()
+{
+	int elements[] = { 1, 2, 3, 100, 100, 5 };
+	int elements2[] = { 3, 100, 100, 5 };
+	std::vector<int> v(elements, elements + 6);
+	std::vector<int> v2(elements2, elements2 + 4);
+
+	std::vector<int>::iterator it = std::search(v.begin(), v.end(), v2.begin(), v2.end());
+	cout << "our expectation is: " << 3 << endl;
+	cout << "acutual value is  : " << *it << endl;
+
+	it = std::search(v.begin(), v.end(), v2.begin(), v2.end(), std::greater<int>());
+
+	cout << "our expectation is: " << 200 << endl;
+	if (it != v.end())
+		cout << "acutual value is  : " << *it << endl;
+	else
+		cout << "can't find the position" << endl;
+
 }
 
 
@@ -83,7 +104,8 @@ int main()
 {
 	//TestCount_if();
 	//TestMismatch();
-	TestEqual();
+	//TestEqual();
+	TestSearch();
 	return 0;
 }
 
