@@ -43,3 +43,11 @@ Temporary Items
 .apdisk
 *.opensdf
 TestAlgorithm.sdf
+Debug/TestAlgorithm.tlog/unsuccessfulbuild
+*.pdb
+*.tlog
+Debug/TestAlgorithm.Build.CppClean.log
+*.log
+Debug/vc120.idb
+*.filters
+TestAlgorithm.v12.suo
