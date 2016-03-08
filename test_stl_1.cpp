@@ -45,6 +45,8 @@ void TestCount_if()
 }
 
 
+
+
 void TestMismatch()
 {
 	int elements[] = { 1, 2, 3, 100, 100, 5 };
@@ -56,7 +58,23 @@ void TestMismatch()
 	cout << *p.first << endl;
 	cout << *p.second << endl;
 
+	p = std::mismatch(v.begin(), v.end(), v2.begin(), std::greater<int>());
+	cout << *p.first << endl;
+	cout << *p.second << endl;
 	cout << 3 << endl;
+}
+
+void TestEqual()
+{
+	int elements[] = { 1, 2, 3, 100 };
+	int elements2[] = { 1, 2, 3, 100 };
+	std::vector<int> v(elements, elements + 4);
+	std::vector<int> v2(elements2, elements2 + 4);
+
+	bool equal = std::equal(v.begin(), v.end(), v2.begin());
+	cout << equal << endl;
+
+	
 }
 
 
@@ -64,7 +82,8 @@ void TestMismatch()
 int main()
 {
 	//TestCount_if();
-	TestMismatch();
+	//TestMismatch();
+	TestEqual();
 	return 0;
 }
 
