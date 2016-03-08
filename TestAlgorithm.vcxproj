@@ -64,7 +64,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="STL_Numberic.h" />
     <ClCompile Include="test_stl_1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="STL_NO_MODIFY.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
